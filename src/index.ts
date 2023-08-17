@@ -47,8 +47,6 @@ let activatableElements: ScrollSpyElement[] = []
 let currentIndex: number | null = null
 let lastActiveClass: string
 
-console.log('Booting')
-
 export const useScrollSpy = (options?: Record<string, any>): UseScrollSpyReturnType => {
   const defaultOptions = Object.assign({}, defaults, (options != null) || {})
 
@@ -190,7 +188,6 @@ export const useScrollSpy = (options?: Record<string, any>): UseScrollSpyReturnT
 
   // Collect all the elements that are eligible to be adorned with the defined `active` class.
   const initActivatableElements = (el: ScrollSpyElement, binding: DirectiveBinding): void => {
-    console.log('Active')
     const opts = Object.assign({}, defaultOptions.active, binding.value)
 
     const elems = [...findElements(el, opts.selector)]
@@ -288,12 +285,10 @@ export const useScrollSpy = (options?: Record<string, any>): UseScrollSpyReturnT
           scrollEl: el as HTMLElement
         }
 
-        console.log('Created')
         scrollSpyElement = el
         currentIndex = null
       },
       mounted (el: ScrollSpyElement) {
-        console.log('Mounted')
         const { options: { sectionSelector } } = el.scrollSpyProps
 
         initSections(el, sectionSelector)
@@ -302,7 +297,6 @@ export const useScrollSpy = (options?: Record<string, any>): UseScrollSpyReturnT
         onScroll()
       },
       updated (el: ScrollSpyElement, binding: DirectiveBinding) {
-        console.log('Updated')
         el.scrollSpyProps.options = Object.assign(
           {},
           defaultOptions,
@@ -332,12 +326,10 @@ export const useScrollSpy = (options?: Record<string, any>): UseScrollSpyReturnT
     },
     vScrollSpyLink: {
       mounted (el: ScrollSpyElement, binding: DirectiveBinding) {
-        console.log('Mounted Link')
         const opts = Object.assign({}, defaultOptions.link, binding.value)
         initLink(el, opts.selector)
       },
       updated (el: ScrollSpyElement, binding: DirectiveBinding) {
-        console.log('Updated Link')
         const opts = Object.assign({}, defaultOptions.link, binding.value)
         initLink(el, opts.selector)
       },
