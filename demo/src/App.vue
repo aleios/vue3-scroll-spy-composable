@@ -1,0 +1,83 @@
+<template>
+  <div class="bg-gray-800 text-white text-opacity-70 font-sans " >
+    <div class="flex flex-col gap-2 fixed top-10 left-2 text-xl select-none">
+      <div class="flex flex-col gap-2" v-scroll-spy-link v-scroll-spy-active="{class: `text-${color}-400`}">
+        <a class="hover:text-red-800">Paragraph 1 </a>
+        <a class="hover:text-red-800">Paragraph 2</a>
+        <a class="hover:text-red-800">Paragraph 3</a>
+        <a class="hover:text-red-800">Paragraph 4</a>
+      </div>
+      <div>Tracking: {{ trackingVal }}</div>
+      <div class="flex flex-col px-2 py-1">
+        Color:
+        <label
+            v-for="(c, i) in colors"
+            :key="`colour_${i}`"
+            class="flex flex-row items-center cursor-pointer"
+        >
+          <input
+              v-model="color"
+              type="radio"
+              name="colour"
+              :value="c"
+              class="mt-0.5 mr-1"
+          />
+          {{ c }}
+        </label>
+      </div>
+    </div>
+
+    <div class="ml-60 text-2xl" id="segments" v-scroll-spy="{data: 'trackingVal', allowNoActiveSection: false}">
+      <div>
+        <h1 class="text-6xl py-4">Paragraph 1</h1>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ita fit cum gravior, tum etiam splendidior oratio. Cur tantas regiones barbarorum pedibus obiit, tot maria transmisit? Dicuntur ista, Cato, magnifice, inquam, sed videsne verborum gloriam tibi cum Pyrrhone et cum Aristone, qui omnia exaequant, esse communem? Quo invento omnis ab eo quasi capite de summo bono et malo disputatio ducitur. Duo Reges: constructio interrete. Haec non erant eius, qui innumerabilis mundos infinitasque regiones, quarum nulla esset ora, nulla extremitas, mente peragravisset. Non enim in selectione virtus ponenda erat, ut id ipsum, quod erat bonorum ultimum, aliud aliquid adquireret. Non enim ipsa genuit hominem, sed accepit a natura inchoatum. Quorum altera prosunt, nocent altera. Ratio ista, quam defendis, praecepta, quae didicisti, quae probas, funditus evertunt amicitiam, quamvis eam Epicurus, ut facit, in caelum efferat laudibus. Nihil enim arbitror esse magna laude dignum, quod te praetermissurum credam aut mortis aut doloris metu. Ea, quae dialectici nunc tradunt et docent, nonne ab illis instituta sunt aut inventa sunt? Quam vellem, inquit, te ad Stoicos inclinavisses! erat enim, si cuiusquam, certe tuum nihil praeter virtutem in bonis ducere. Hoc loco discipulos quaerere videtur, ut, qui asoti esse velint, philosophi ante fiant.
+      </div>
+
+      <div>
+        <h1 class="text-6xl py-4">Paragraph 2</h1>
+        Ita finis bonorum existit secundum naturam vivere sic affectum, ut optime is affici possit ad naturamque accommodatissime. Haec para/doca illi, nos admirabilia dicamus. Illa enim, quae prosunt aut quae nocent, aut bona sunt aut mala, quae sint paria necesse est. Atqui eorum nihil est eius generis, ut sit in fine atque extrerno bonorum.
+      </div>
+
+      <div>
+        <h1 class="text-6xl py-4">Paragraph 3</h1>
+        <p>Cur id non ita fit? Et si in ipsa gubernatione neglegentia est navis eversa, maius est peccatum in auro quam in palea. Aufidio, praetorio, erudito homine, oculis capto, saepe audiebam, cum se lucis magis quam utilitatis desiderio moveri diceret. Sed tamen intellego quid velit. Cur fortior sit, si illud, quod tute concedis, asperum et vix ferendum putabit? Quae tamen a te agetur non melior, quam illae sunt, quas interdum optines.</p>
+        <p>Cur id non ita fit? Et si in ipsa gubernatione neglegentia est navis eversa, maius est peccatum in auro quam in palea. Aufidio, praetorio, erudito homine, oculis capto, saepe audiebam, cum se lucis magis quam utilitatis desiderio moveri diceret. Sed tamen intellego quid velit. Cur fortior sit, si illud, quod tute concedis, asperum et vix ferendum putabit? Quae tamen a te agetur non melior, quam illae sunt, quas interdum optines.</p>
+        <p>Cur id non ita fit? Et si in ipsa gubernatione neglegentia est navis eversa, maius est peccatum in auro quam in palea. Aufidio, praetorio, erudito homine, oculis capto, saepe audiebam, cum se lucis magis quam utilitatis desiderio moveri diceret. Sed tamen intellego quid velit. Cur fortior sit, si illud, quod tute concedis, asperum et vix ferendum putabit? Quae tamen a te agetur non melior, quam illae sunt, quas interdum optines.</p>
+        <p>Cur id non ita fit? Et si in ipsa gubernatione neglegentia est navis eversa, maius est peccatum in auro quam in palea. Aufidio, praetorio, erudito homine, oculis capto, saepe audiebam, cum se lucis magis quam utilitatis desiderio moveri diceret. Sed tamen intellego quid velit. Cur fortior sit, si illud, quod tute concedis, asperum et vix ferendum putabit? Quae tamen a te agetur non melior, quam illae sunt, quas interdum optines.</p>
+        <p>Cur id non ita fit? Et si in ipsa gubernatione neglegentia est navis eversa, maius est peccatum in auro quam in palea. Aufidio, praetorio, erudito homine, oculis capto, saepe audiebam, cum se lucis magis quam utilitatis desiderio moveri diceret. Sed tamen intellego quid velit. Cur fortior sit, si illud, quod tute concedis, asperum et vix ferendum putabit? Quae tamen a te agetur non melior, quam illae sunt, quas interdum optines.</p>
+      </div>
+
+      <div>
+        <h1 class="text-6xl py-4">Paragraph 4</h1>
+        <p>Ego autem existimo, si honestum esse aliquid ostendero, quod sit ipsum vi sua propter seque expetendum, iacere vestra omnia. Negat esse eam, inquit, propter se expetendam. Atqui reperies, inquit, in hoc quidem pertinacem; Sin est etiam corpus, ista explanatio naturae nempe hoc effecerit, ut ea, quae ante explanationem tenebamus, relinquamus. Hoc Hieronymus summum bonum esse dixit. Nam diligi et carum esse iucundum est propterea, quia tutiorem vitam et voluptatem pleniorem efficit. Is ita vivebat, ut nulla tam exquisita posset inveniri voluptas, qua non abundaret. Dicet pro me ipsa virtus nec dubitabit isti vestro beato M. Ac ne plura complectar-sunt enim innumerabilia-, bene laudata virtus voluptatis aditus intercludat necesse est. Miserum hominem! Si dolor summum malum est, dici aliter non potest.</p>
+        <p>Ego autem existimo, si honestum esse aliquid ostendero, quod sit ipsum vi sua propter seque expetendum, iacere vestra omnia. Negat esse eam, inquit, propter se expetendam. Atqui reperies, inquit, in hoc quidem pertinacem; Sin est etiam corpus, ista explanatio naturae nempe hoc effecerit, ut ea, quae ante explanationem tenebamus, relinquamus. Hoc Hieronymus summum bonum esse dixit. Nam diligi et carum esse iucundum est propterea, quia tutiorem vitam et voluptatem pleniorem efficit. Is ita vivebat, ut nulla tam exquisita posset inveniri voluptas, qua non abundaret. Dicet pro me ipsa virtus nec dubitabit isti vestro beato M. Ac ne plura complectar-sunt enim innumerabilia-, bene laudata virtus voluptatis aditus intercludat necesse est. Miserum hominem! Si dolor summum malum est, dici aliter non potest.</p>
+        <p>Ego autem existimo, si honestum esse aliquid ostendero, quod sit ipsum vi sua propter seque expetendum, iacere vestra omnia. Negat esse eam, inquit, propter se expetendam. Atqui reperies, inquit, in hoc quidem pertinacem; Sin est etiam corpus, ista explanatio naturae nempe hoc effecerit, ut ea, quae ante explanationem tenebamus, relinquamus. Hoc Hieronymus summum bonum esse dixit. Nam diligi et carum esse iucundum est propterea, quia tutiorem vitam et voluptatem pleniorem efficit. Is ita vivebat, ut nulla tam exquisita posset inveniri voluptas, qua non abundaret. Dicet pro me ipsa virtus nec dubitabit isti vestro beato M. Ac ne plura complectar-sunt enim innumerabilia-, bene laudata virtus voluptatis aditus intercludat necesse est. Miserum hominem! Si dolor summum malum est, dici aliter non potest.</p>
+        <p>Ego autem existimo, si honestum esse aliquid ostendero, quod sit ipsum vi sua propter seque expetendum, iacere vestra omnia. Negat esse eam, inquit, propter se expetendam. Atqui reperies, inquit, in hoc quidem pertinacem; Sin est etiam corpus, ista explanatio naturae nempe hoc effecerit, ut ea, quae ante explanationem tenebamus, relinquamus. Hoc Hieronymus summum bonum esse dixit. Nam diligi et carum esse iucundum est propterea, quia tutiorem vitam et voluptatem pleniorem efficit. Is ita vivebat, ut nulla tam exquisita posset inveniri voluptas, qua non abundaret. Dicet pro me ipsa virtus nec dubitabit isti vestro beato M. Ac ne plura complectar-sunt enim innumerabilia-, bene laudata virtus voluptatis aditus intercludat necesse est. Miserum hominem! Si dolor summum malum est, dici aliter non potest.</p>
+        <p>Ego autem existimo, si honestum esse aliquid ostendero, quod sit ipsum vi sua propter seque expetendum, iacere vestra omnia. Negat esse eam, inquit, propter se expetendam. Atqui reperies, inquit, in hoc quidem pertinacem; Sin est etiam corpus, ista explanatio naturae nempe hoc effecerit, ut ea, quae ante explanationem tenebamus, relinquamus. Hoc Hieronymus summum bonum esse dixit. Nam diligi et carum esse iucundum est propterea, quia tutiorem vitam et voluptatem pleniorem efficit. Is ita vivebat, ut nulla tam exquisita posset inveniri voluptas, qua non abundaret. Dicet pro me ipsa virtus nec dubitabit isti vestro beato M. Ac ne plura complectar-sunt enim innumerabilia-, bene laudata virtus voluptatis aditus intercludat necesse est. Miserum hominem! Si dolor summum malum est, dici aliter non potest.</p>
+        <p>Ego autem existimo, si honestum esse aliquid ostendero, quod sit ipsum vi sua propter seque expetendum, iacere vestra omnia. Negat esse eam, inquit, propter se expetendam. Atqui reperies, inquit, in hoc quidem pertinacem; Sin est etiam corpus, ista explanatio naturae nempe hoc effecerit, ut ea, quae ante explanationem tenebamus, relinquamus. Hoc Hieronymus summum bonum esse dixit. Nam diligi et carum esse iucundum est propterea, quia tutiorem vitam et voluptatem pleniorem efficit. Is ita vivebat, ut nulla tam exquisita posset inveniri voluptas, qua non abundaret. Dicet pro me ipsa virtus nec dubitabit isti vestro beato M. Ac ne plura complectar-sunt enim innumerabilia-, bene laudata virtus voluptatis aditus intercludat necesse est. Miserum hominem! Si dolor summum malum est, dici aliter non potest.</p>
+        <p>Ego autem existimo, si honestum esse aliquid ostendero, quod sit ipsum vi sua propter seque expetendum, iacere vestra omnia. Negat esse eam, inquit, propter se expetendam. Atqui reperies, inquit, in hoc quidem pertinacem; Sin est etiam corpus, ista explanatio naturae nempe hoc effecerit, ut ea, quae ante explanationem tenebamus, relinquamus. Hoc Hieronymus summum bonum esse dixit. Nam diligi et carum esse iucundum est propterea, quia tutiorem vitam et voluptatem pleniorem efficit. Is ita vivebat, ut nulla tam exquisita posset inveniri voluptas, qua non abundaret. Dicet pro me ipsa virtus nec dubitabit isti vestro beato M. Ac ne plura complectar-sunt enim innumerabilia-, bene laudata virtus voluptatis aditus intercludat necesse est. Miserum hominem! Si dolor summum malum est, dici aliter non potest.</p>
+        <p>Ego autem existimo, si honestum esse aliquid ostendero, quod sit ipsum vi sua propter seque expetendum, iacere vestra omnia. Negat esse eam, inquit, propter se expetendam. Atqui reperies, inquit, in hoc quidem pertinacem; Sin est etiam corpus, ista explanatio naturae nempe hoc effecerit, ut ea, quae ante explanationem tenebamus, relinquamus. Hoc Hieronymus summum bonum esse dixit. Nam diligi et carum esse iucundum est propterea, quia tutiorem vitam et voluptatem pleniorem efficit. Is ita vivebat, ut nulla tam exquisita posset inveniri voluptas, qua non abundaret. Dicet pro me ipsa virtus nec dubitabit isti vestro beato M. Ac ne plura complectar-sunt enim innumerabilia-, bene laudata virtus voluptatis aditus intercludat necesse est. Miserum hominem! Si dolor summum malum est, dici aliter non potest.</p>
+        <p>Ego autem existimo, si honestum esse aliquid ostendero, quod sit ipsum vi sua propter seque expetendum, iacere vestra omnia. Negat esse eam, inquit, propter se expetendam. Atqui reperies, inquit, in hoc quidem pertinacem; Sin est etiam corpus, ista explanatio naturae nempe hoc effecerit, ut ea, quae ante explanationem tenebamus, relinquamus. Hoc Hieronymus summum bonum esse dixit. Nam diligi et carum esse iucundum est propterea, quia tutiorem vitam et voluptatem pleniorem efficit. Is ita vivebat, ut nulla tam exquisita posset inveniri voluptas, qua non abundaret. Dicet pro me ipsa virtus nec dubitabit isti vestro beato M. Ac ne plura complectar-sunt enim innumerabilia-, bene laudata virtus voluptatis aditus intercludat necesse est. Miserum hominem! Si dolor summum malum est, dici aliter non potest.</p>
+        <p>Ego autem existimo, si honestum esse aliquid ostendero, quod sit ipsum vi sua propter seque expetendum, iacere vestra omnia. Negat esse eam, inquit, propter se expetendam. Atqui reperies, inquit, in hoc quidem pertinacem; Sin est etiam corpus, ista explanatio naturae nempe hoc effecerit, ut ea, quae ante explanationem tenebamus, relinquamus. Hoc Hieronymus summum bonum esse dixit. Nam diligi et carum esse iucundum est propterea, quia tutiorem vitam et voluptatem pleniorem efficit. Is ita vivebat, ut nulla tam exquisita posset inveniri voluptas, qua non abundaret. Dicet pro me ipsa virtus nec dubitabit isti vestro beato M. Ac ne plura complectar-sunt enim innumerabilia-, bene laudata virtus voluptatis aditus intercludat necesse est. Miserum hominem! Si dolor summum malum est, dici aliter non potest.</p>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script setup lang="ts">
+import { useScrollSpy } from 'scroll-spy'
+import {ref} from "vue";
+
+const { vScrollSpyLink, vScrollSpy, vScrollSpyActive } = useScrollSpy()
+
+const colors = ['red', 'green', 'blue', 'purple']
+const color = ref('red')
+
+const trackingVal = ref(0)
+
+defineExpose({
+  trackingVal
+})
+
+</script>
+
