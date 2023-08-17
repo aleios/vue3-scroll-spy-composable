@@ -1,32 +1,6 @@
 <template>
   <div class="bg-gray-800 text-white text-opacity-70 font-sans " >
-    <div class="flex flex-col gap-2 fixed top-10 left-2 text-xl select-none">
-      <div class="flex flex-col gap-2" v-scroll-spy-link v-scroll-spy-active="{class: `text-${color}-400`}">
-        <a class="hover:text-red-800">Paragraph 1 </a>
-        <a class="hover:text-red-800">Paragraph 2</a>
-        <a class="hover:text-red-800">Paragraph 3</a>
-        <a class="hover:text-red-800">Paragraph 4</a>
-      </div>
-      <div>Tracking: {{ trackingVal }}</div>
-      <div class="flex flex-col px-2 py-1">
-        Color:
-        <label
-            v-for="(c, i) in colors"
-            :key="`colour_${i}`"
-            class="flex flex-row items-center cursor-pointer"
-        >
-          <input
-              v-model="color"
-              type="radio"
-              name="colour"
-              :value="c"
-              class="mt-0.5 mr-1"
-          />
-          {{ c }}
-        </label>
-      </div>
-    </div>
-
+    <Sidebar :tracking-val="trackingVal" />
     <div class="ml-60 text-2xl" id="segments" v-scroll-spy="{data: 'trackingVal', allowNoActiveSection: false}">
       <div>
         <h1 class="text-6xl py-4">Paragraph 1</h1>
@@ -65,19 +39,19 @@
 </template>
 
 <script setup lang="ts">
+import Sidebar from "./components/Sidebar.vue"
+
 import { useScrollSpy } from 'scroll-spy'
 import {ref} from "vue";
 
-const { vScrollSpyLink, vScrollSpy, vScrollSpyActive } = useScrollSpy()
-
-const colors = ['red', 'green', 'blue', 'purple']
-const color = ref('red')
+const { vScrollSpy } = useScrollSpy()
 
 const trackingVal = ref(0)
 
 defineExpose({
   trackingVal
 })
+
 
 </script>
 
