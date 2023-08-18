@@ -3,6 +3,7 @@ node_modules
 docs
 build
 demo
+tests
 
 # config files
 .eslintignore

@@ -8,7 +8,9 @@
   "scripts": {
     "build": "vite build",
     "lint": "eslint \"src/**/*.{ts,tsx,js,jsx}\"",
-    "lint:fix": "eslint \"src/**/*.{ts,tsx,js,jsx}\" --fix"
+    "lint:fix": "eslint \"src/**/*.{ts,tsx,js,jsx}\" --fix",
+    "test": "vitest",
+    "test:cov": "vitest run --coverage"
   },
   "dependencies": {
     "@tweenjs/tween.js": "^21.0.0",
@@ -23,9 +25,11 @@
     "eslint-plugin-n": "^16.0.1",
     "eslint-plugin-promise": "^6.1.1",
     "eslint-plugin-vue": "^9.17.0",
+    "happy-dom": "^10.10.2",
     "typescript": "^5.1.6",
     "vite": "^4.4.5",
     "vite-plugin-dts": "^3.5.2",
+    "vitest": "^0.34.2",
     "vue-tsc": "^1.8.5"
   }
 }
