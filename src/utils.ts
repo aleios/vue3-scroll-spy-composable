@@ -5,6 +5,9 @@ export const getOffsetTop = (
     untilParent: any = null
 ): number => {
   let offsetTop = 0
+  if (elem === null) {
+    return 0
+  }
   do {
     if (!isNaN(elem.offsetTop)) {
       // eslint-disable-next-line @typescript-eslint/restrict-plus-operands
