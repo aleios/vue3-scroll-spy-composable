@@ -21,11 +21,16 @@ export default defineConfig({
             }
         },
     },
-    plugins: [vue(), dts()],
+    plugins: [
+        vue(),
+        dts({
+            exclude: [ "test/**" ]
+        })
+    ],
     resolve: {
         extensions: ['.tsx', '.ts', '.js'],
         alias: {
             '~/': fileURLToPath(new URL('./src/', import.meta.url))
         }
-    }
+    },
 })
