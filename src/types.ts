@@ -7,10 +7,12 @@ export interface LinkOptions {
   selector: string
 }
 
+export type IndexChangedSig = (index: number | null) => void
+
 export interface DefaultOptions {
   allowNoActiveSection: boolean
   sectionSelector: string | null
-  data: string | null
+  indexChanged: IndexChangedSig | null
   offset: number
   time: number
   steps: 30

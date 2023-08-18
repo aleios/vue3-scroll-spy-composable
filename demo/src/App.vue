@@ -1,7 +1,7 @@
 <template>
   <div class="bg-gray-800 text-white text-opacity-70 font-sans " >
-    <Sidebar :tracking-val="trackingVal" />
-    <div class="ml-60 text-2xl" id="segments" v-scroll-spy="{data: 'trackingVal', allowNoActiveSection: false}">
+    <Sidebar :current-section="currentSection" />
+    <div class="ml-60 text-2xl" id="segments" v-scroll-spy="{indexChanged: sectionChanged, allowNoActiveSection: false}">
       <div>
         <h1 class="text-6xl py-4">Paragraph 1</h1>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ita fit cum gravior, tum etiam splendidior oratio. Cur tantas regiones barbarorum pedibus obiit, tot maria transmisit? Dicuntur ista, Cato, magnifice, inquam, sed videsne verborum gloriam tibi cum Pyrrhone et cum Aristone, qui omnia exaequant, esse communem? Quo invento omnis ab eo quasi capite de summo bono et malo disputatio ducitur. Duo Reges: constructio interrete. Haec non erant eius, qui innumerabilis mundos infinitasque regiones, quarum nulla esset ora, nulla extremitas, mente peragravisset. Non enim in selectione virtus ponenda erat, ut id ipsum, quod erat bonorum ultimum, aliud aliquid adquireret. Non enim ipsa genuit hominem, sed accepit a natura inchoatum. Quorum altera prosunt, nocent altera. Ratio ista, quam defendis, praecepta, quae didicisti, quae probas, funditus evertunt amicitiam, quamvis eam Epicurus, ut facit, in caelum efferat laudibus. Nihil enim arbitror esse magna laude dignum, quod te praetermissurum credam aut mortis aut doloris metu. Ea, quae dialectici nunc tradunt et docent, nonne ab illis instituta sunt aut inventa sunt? Quam vellem, inquit, te ad Stoicos inclinavisses! erat enim, si cuiusquam, certe tuum nihil praeter virtutem in bonis ducere. Hoc loco discipulos quaerere videtur, ut, qui asoti esse velint, philosophi ante fiant.
@@ -46,11 +46,11 @@ import {ref} from "vue";
 
 const { vScrollSpy } = useScrollSpy()
 
-const trackingVal = ref(0)
+const currentSection = ref(0)
 
-defineExpose({
-  trackingVal
-})
+const sectionChanged = (index: number) => {
+  currentSection.value = index
+}
 
 
 </script>

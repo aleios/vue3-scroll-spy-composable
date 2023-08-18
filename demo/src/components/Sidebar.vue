@@ -6,7 +6,7 @@
       <a class="hover:text-red-800">Paragraph 3</a>
       <a class="hover:text-red-800">Paragraph 4</a>
     </div>
-    <div>Section Index: {{ trackingVal }}</div>
+    <div>Section Index: {{ currentSection }}</div>
     <div class="flex flex-col px-2 py-1">
       Color:
       <label
@@ -31,7 +31,7 @@ import { useScrollSpy } from 'scroll-spy'
 import {ref} from "vue";
 
 interface SidebarProps {
-  trackingVal: number
+  currentSection: number
 }
 
 const props = defineProps<SidebarProps>()

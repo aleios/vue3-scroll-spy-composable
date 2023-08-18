@@ -1,4 +1,4 @@
-import { type ComponentPublicInstance, type Directive, type DirectiveBinding } from 'vue'
+import { type Directive, type DirectiveBinding } from 'vue'
 import { type DefaultOptions, type ScrollSpyElement } from './types.ts'
 import { Easing, scrollWithAnimation } from './animate.ts'
 import { getOffsetTop } from './utils.ts'
@@ -18,8 +18,8 @@ const defaults: DefaultOptions = {
   allowNoActiveSection: false,
   /** The scrollable container */
   sectionSelector: null,
-  /** Tracking value for index **/
-  data: null,
+  /** Callback for index value change **/
+  indexChanged: null,
   /** Scroll offset from top */
   offset: 0,
   /** Animation timing */
@@ -266,13 +266,9 @@ export const useScrollSpy = (options?: Record<string, any>): UseScrollSpyReturnT
 
             recalculateActive()
 
-            // Notify when index is changed if data is set.
-            if ((options.data != null) && ((binding?.instance) != null)) {
-              // eslint-disable-next-line no-prototype-builtins
-              if (binding.instance.hasOwnProperty(options.data)) {
-                const dataKey = options.data as keyof ComponentPublicInstance
-                binding.instance[dataKey] = currentIndex
-              }
+            // Trigger callback if available.
+            if ((options.indexChanged != null)) {
+              options.indexChanged(currentIndex)
             }
           }
         }
