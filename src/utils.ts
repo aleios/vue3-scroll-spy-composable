@@ -17,5 +17,5 @@ export const getOffsetTop = (
     if (offsetParent === null) break
     elem = offsetParent
   } while ((Boolean(elem)) && elem !== untilParent)
-  return offsetTop
+  return Math.ceil(offsetTop)
 }

@@ -238,7 +238,7 @@ export const useScrollSpy = (options?: Record<string, any>): UseScrollSpyReturnT
             for (index = 0; index < scrollSpySections.length; index++) {
               if (
                 getOffsetTop(scrollSpySections[index], scrollEl) - options.offset >
-                                scrollEl.scrollTop
+                                Math.ceil(scrollEl.scrollTop)
               ) {
                 break
               }
@@ -255,7 +255,7 @@ export const useScrollSpy = (options?: Record<string, any>): UseScrollSpyReturnT
               idScrollSection instanceof HTMLElement &&
                             getOffsetTop(scrollSpySections[index]) +
                             idScrollSection.offsetHeight <
-                            scrollEl.scrollTop
+                            Math.ceil(scrollEl.scrollTop)
             ) {
               index = null
             }
