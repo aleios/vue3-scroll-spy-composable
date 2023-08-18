@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@aleios10/vue3-scroll-spy-composable": "1.0.0",
     "vue": "^3.3.4"
   },
   "devDependencies": {

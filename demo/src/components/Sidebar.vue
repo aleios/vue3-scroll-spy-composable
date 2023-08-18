@@ -27,7 +27,7 @@
   </div>
 </template>
 <script setup lang="ts">
-import { useScrollSpy } from 'scroll-spy'
+import { useScrollSpy } from '@aleios10/vue3-scroll-spy-composable'
 import {ref} from "vue";
 
 interface SidebarProps {

@@ -41,7 +41,7 @@
 <script setup lang="ts">
 import Sidebar from "./components/Sidebar.vue"
 
-import { useScrollSpy } from 'scroll-spy'
+import { useScrollSpy } from '@aleios10/vue3-scroll-spy-composable'
 import {ref} from "vue";
 
 const { vScrollSpy } = useScrollSpy()
