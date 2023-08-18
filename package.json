@@ -5,6 +5,7 @@
   "type": "module",
   "author": "aleios",
   "main": "src/index.ts",
+  "repository": "github:aleios/vue3-scroll-spy-composable",
   "scripts": {
     "build": "vite build",
     "lint": "eslint \"src/**/*.{ts,tsx,js,jsx}\"",
