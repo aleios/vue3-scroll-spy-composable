@@ -28,7 +28,7 @@
     "eslint-plugin-vue": "^9.17.0",
     "happy-dom": "^10.10.2",
     "typescript": "^5.1.6",
-    "vite": "^4.4.5",
+    "vite": "^4.4.12",
     "vite-plugin-dts": "^3.5.2",
     "vitest": "^0.34.2",
     "vue-tsc": "^1.8.5"
